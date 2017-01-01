@@ -13,7 +13,7 @@ import FirebaseAuthUI
 class CloudRookAuthViewController: FUIAuthPickerViewController {
 
     init(authUI: FUIAuth){
-        super.init(nibName: "FIRAuthPickerViewController", bundle: nil, authUI: authUI)
+        super.init(nibName: "FUIAuthPickerViewController", bundle: nil, authUI: authUI)
     }
     
     required init?(coder aDecoder: NSCoder) {

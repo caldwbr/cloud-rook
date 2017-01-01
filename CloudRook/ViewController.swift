@@ -22,6 +22,9 @@ class ViewController: UIViewController, FUIAuthDelegate {
     var googleStuff = ["https://www.googleapis.com/auth/plus.login", "https://www.googleapis.com/auth/plus.me", "https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile"]
     
     var ref: FIRDatabaseReference!
+    
+    var authUI: FUIAuth?
+//    let authUI = FIRAuth.auth()
 
 
     @IBOutlet weak var profilePic: UIImageView!
@@ -54,6 +57,7 @@ class ViewController: UIViewController, FUIAuthDelegate {
     }
     
     func checkLoggedIn() {
+        authUI = FUIAuth.defaultAuthUI()
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             if user != nil {
                 // User is signed in.
@@ -92,25 +96,26 @@ class ViewController: UIViewController, FUIAuthDelegate {
         }
     }
     
-    let authUI = FUIAuth.defaultAuthUI()
+    
     
     func login() {
-        
         //let googleProvider = FUIGoogleAuth(scopes: googleStuff)
         //let facebookProvider = FUIFacebookAuth(permissions: ["public_profile"])
-        authUI?.delegate = self
+        if let authUI = authUI {
+        authUI.delegate = self
         let providers: [FUIAuthProvider] = [
         FUIGoogleAuth(),
         FUIFacebookAuth(),
         ]
-        self.authUI?.providers = providers
+        authUI.providers = providers
         //authUI?.providers = [googleProvider, facebookProvider]
         
         
        
-        //let authViewController = CloudRookAuthViewController(coder: <#T##NSCoder#>)
-        //let navc = UINavigationController(rootViewController: authViewController)
-        //self.present(navc, animated: true, completion: nil)
+        let authViewController = CloudRookAuthViewController(authUI: authUI)
+        let navc = UINavigationController(rootViewController: authViewController)
+        self.present(navc, animated: true, completion: nil)
+        }
     }
     
     func authPickerViewController(forAuthUI authUI: FUIAuth) -> FUIAuthPickerViewController {

@@ -221,10 +221,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ogz-qm-JCg">
-                                                                <rect key="frame" x="0.0" y="218.33333333333331" width="81.333333333333314" height="113"/>
+                                                                <rect key="frame" x="0.0" y="218.66666666666669" width="81.333333333333314" height="112.66666666666663"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G4e-9w-vKE">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="81.333333333333314" height="113"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="81.333333333333314" height="112.66666666666663"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                                 <integer key="value" value="5"/>
@@ -243,10 +243,10 @@
                                                                 </constraints>
                                                             </view>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a7u-sO-nBT">
-                                                                <rect key="frame" x="0.0" y="81.666666666666643" width="81.333333333333314" height="112.33333333333336"/>
+                                                                <rect key="frame" x="0.0" y="81.666666666666671" width="81.333333333333314" height="113.66666666666664"/>
                                                                 <subviews>
                                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CQf-dP-Skf">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="81.333333333333314" height="112.33333333333334"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="81.333333333333314" height="113.66666666666666"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                                 <integer key="value" value="5"/>
