@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		E4D6E7B2249E876EF5D2BF22 /* Pods_CloudRook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C19B674894B4C19B081203 /* Pods_CloudRook.framework */; };
 		EB189F271E023DA0000C6898 /* CloudRookAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB189F261E023DA0000C6898 /* CloudRookAuthViewController.swift */; };
+		EB61B11E1E1974AB00463359 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB61B11D1E1974AB00463359 /* UserModel.swift */; };
+		EB61B1201E19A1B800463359 /* friendListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB61B11F1E19A1B800463359 /* friendListTableViewController.swift */; };
+		EB61B1221E19AD1900463359 /* friendCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB61B1211E19AD1900463359 /* friendCellTableViewCell.swift */; };
 		EB9756BC1E03368900D8DB9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EB9756BB1E03368900D8DB9A /* GoogleService-Info.plist */; };
 		EBAE2C9B1E01110C001AEEC3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE2C9A1E01110C001AEEC3 /* AppDelegate.swift */; };
 		EBAE2C9D1E01110C001AEEC3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAE2C9C1E01110C001AEEC3 /* ViewController.swift */; };
@@ -24,6 +27,9 @@
 		C1C19B674894B4C19B081203 /* Pods_CloudRook.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudRook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1715FD1E1855DE00694B3E /* libz.1.2.8.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.8.tbd; path = usr/lib/libz.1.2.8.tbd; sourceTree = SDKROOT; };
 		EB189F261E023DA0000C6898 /* CloudRookAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudRookAuthViewController.swift; sourceTree = "<group>"; };
+		EB61B11D1E1974AB00463359 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		EB61B11F1E19A1B800463359 /* friendListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = friendListTableViewController.swift; sourceTree = "<group>"; };
+		EB61B1211E19AD1900463359 /* friendCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = friendCellTableViewCell.swift; sourceTree = "<group>"; };
 		EB9756BB1E03368900D8DB9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EBAE2C971E01110C001AEEC3 /* CloudRook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudRook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBAE2C9A1E01110C001AEEC3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,8 +101,11 @@
 				EBAE2CA61E01110C001AEEC3 /* LaunchScreen.storyboard */,
 				EBAE2CA91E01110C001AEEC3 /* Info.plist */,
 				EB9756BB1E03368900D8DB9A /* GoogleService-Info.plist */,
+				EB61B11D1E1974AB00463359 /* UserModel.swift */,
 				EBAE2CA11E01110C001AEEC3 /* CloudRook.xcdatamodeld */,
 				EB189F261E023DA0000C6898 /* CloudRookAuthViewController.swift */,
+				EB61B11F1E19A1B800463359 /* friendListTableViewController.swift */,
+				EB61B1211E19AD1900463359 /* friendCellTableViewCell.swift */,
 			);
 			path = CloudRook;
 			sourceTree = "<group>";
@@ -232,7 +241,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB61B11E1E1974AB00463359 /* UserModel.swift in Sources */,
+				EB61B1201E19A1B800463359 /* friendListTableViewController.swift in Sources */,
 				EBAE2CA31E01110C001AEEC3 /* CloudRook.xcdatamodeld in Sources */,
+				EB61B1221E19AD1900463359 /* friendCellTableViewCell.swift in Sources */,
 				EBAE2C9D1E01110C001AEEC3 /* ViewController.swift in Sources */,
 				EBAE2C9B1E01110C001AEEC3 /* AppDelegate.swift in Sources */,
 				EB189F271E023DA0000C6898 /* CloudRookAuthViewController.swift in Sources */,

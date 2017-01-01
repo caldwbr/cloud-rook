@@ -16,13 +16,14 @@ import FirebaseFacebookAuthUI
 import Bolts
 import FBSDKCoreKit
 import FBSDKLoginKit
+import SwiftyJSON
 
 class ViewController: UIViewController, FUIAuthDelegate {
     
     var googleStuff = ["https://www.googleapis.com/auth/plus.login", "https://www.googleapis.com/auth/plus.me", "https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile"]
     
     var ref: FIRDatabaseReference!
-    
+    var users = [User]()
     var authUI: FUIAuth?
 //    let authUI = FIRAuth.auth()
 
@@ -51,7 +52,9 @@ class ViewController: UIViewController, FUIAuthDelegate {
         super.viewDidLoad()
         
         checkLoggedIn()
-        
+        if(FIRAuth.auth()?.currentUser != nil){
+            self.downloadFriendsList()
+        }
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -61,7 +64,10 @@ class ViewController: UIViewController, FUIAuthDelegate {
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             if user != nil {
                 // User is signed in.
+                //self.downloadFriendsList()
+                //self.downloadFriendsList()
                 self.ref = FIRDatabase.database().reference()
+//                self.downloadFriendsList()
                 if user?.photoURL == nil {
                     self.profilePic.image = UIImage(named: "CloudRookSignIn")
                 }else{
@@ -138,29 +144,16 @@ class ViewController: UIViewController, FUIAuthDelegate {
     }
 
     @IBAction func masAmigosPressed(_ sender: Any) {
-        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-            // Get user value
-            let values = snapshot.value as? NSDictionary
-            var myUserArray: [String] = []
-            if let theUsers = values?.allKeys {
-                for theUser in theUsers {
-                    myUserArray.append(theUser as! String)
-                }
+        self.performSegue(withIdentifier: "friendList", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "friendList"{
+            if let navBar = segue.destination as? UINavigationController{
+                let friendList = navBar.topViewController as? friendListTableViewController
+                friendList?.friends = self.users
             }
-            for index in 0..<myUserArray.count {
-                //print(myUserArray[index])
-                if let userJunk = values?[myUserArray[index]] {
-                    print(userJunk)
-                }
-                }
-            print(values?["0AUKdJmfrcXBqOonAPyRpnsosk92"])
-            
-            
 
-            
-            // ...
-        }) { (error) in
-            print(error.localizedDescription)
         }
     }
     
@@ -174,7 +167,30 @@ class ViewController: UIViewController, FUIAuthDelegate {
     }
     
 
-  
+    
+    func downloadFriendsList(){
+        let ref2 = FIRDatabase.database().reference()
+        ref2.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot]{
+                print("Snapshot Count")
+                print(snapshots.count)
+                for snap in snapshots
+                {
+                    //print(snap.value)
+                    let user = User(userObject: JSON(snap.value))
+                    self.users.append(user)
+
+                }
+                
+                print(self.users[0].email)
+                print(self.users.count)
+            }
+
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
 
 
 }
