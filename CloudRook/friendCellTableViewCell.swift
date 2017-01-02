@@ -16,6 +16,9 @@ class friendCellTableViewCell: UITableViewCell {
     @IBOutlet weak var friendImage: UIImageView!
     @IBOutlet weak var friendName: UILabel!
     
+    @IBAction func invitePressed(_ sender: UIButton) {
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -43,14 +46,12 @@ class friendCellTableViewCell: UITableViewCell {
                                 print("image downloaded: \(image)")
                                 self.friendImage.image = image
                             }
-                            else{
-                                self.friendImage.image = UIImage(named: "Black1")
-                            }
+                            
                         }
 
         }
         else{
-              self.friendImage.image = UIImage(named: "Black1")
+              self.friendImage.image = UIImage(named: "someUser")
         }
         
 //            Alamofire.request("").responseImage { response in

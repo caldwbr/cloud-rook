@@ -16,9 +16,15 @@ class User {
 //    var email: String?
 //    var picUrl: NSURL?
     
+    //var id: String?
     var name: String?
     var email: String?
     var picUrl: NSURL?
+    //var potentialFriends: [String]
+//    var invitedFriends: [String]
+//    var confirmedFriends: [String]
+    
+    
     /*
     init(id: String,foodName: String,foodPicture: NSURL,rating:Float, deliveryTime:Int,
         price:Int, minOrder:Int, category:String, description:String, sellerId:String,

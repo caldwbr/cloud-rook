@@ -151,7 +151,7 @@ class ViewController: UIViewController, FUIAuthDelegate {
         if segue.identifier == "friendList"{
             if let navBar = segue.destination as? UINavigationController{
                 let friendList = navBar.topViewController as? friendListTableViewController
-                friendList?.friends = self.users
+                friendList?.potentialFriends = self.users
             }
 
         }
@@ -165,8 +165,6 @@ class ViewController: UIViewController, FUIAuthDelegate {
         }
         
     }
-    
-
     
     func downloadFriendsList(){
         let ref2 = FIRDatabase.database().reference()
@@ -185,6 +183,14 @@ class ViewController: UIViewController, FUIAuthDelegate {
                 
                 print(self.users[0].email)
                 print(self.users.count)
+                let abstractCardDeck = DeckOfCards()
+                let aCardDeck: [Card] = abstractCardDeck.createDeck()
+                print(aCardDeck)
+                print(aCardDeck[3].cardColor)
+                print(aCardDeck[20].cardColor)
+                print(aCardDeck[20].cardNumber)
+                print(aCardDeck[3].cardColor)
+                print(aCardDeck[3].cardColor)
             }
 
         }) { (error) in
